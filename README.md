@@ -66,5 +66,5 @@ the **-Xmx** to several GBs, before running plantuml.
 [PlantUML]: http://plantuml.com
 [PCDM_Multi_Page_Text.ttl]: https://github.com/mrihtar/rdfgraph/blob/master/sample/PCDM_Multi_Page_Text.ttl
 [Diagrams with rdfpuml]: https://github.com/duraspace/pcdm/wiki/Diagrams-with-rdfpuml
-[PCDM_Multi_Page_Text.png]: https://github.com/mrihtar/rdfgraph/blob/master/sample/PCDM_Multi_Page_Text.png
+[PCDM_Multi_Page_Text.png]: https://github.com/mrihtar/rdfgraph/raw/master/sample/PCDM_Multi_Page_Text.png
 [defns.json]: https://github.com/mrihtar/rdfgraph/blob/master/defns.json
