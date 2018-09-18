@@ -1,0 +1,73 @@
+@startuml
+object "media:mptw_f4/rep/xml" as media_mptw_f4_rep_xml
+object media_mptw_f4_rep_xml {
+  a pcdm:File
+}
+object "media:mptw_f6/rep/jp2" as media_mptw_f6_rep_jp2
+object media_mptw_f6_rep_jp2 {
+  a pcdm:File
+}
+object "media:mptw_f1/master/pdf" as media_mptw_f1_master_pdf
+object media_mptw_f1_master_pdf {
+  a pcdm:File
+}
+object "media:mptw_f7/rep/xml" as media_mptw_f7_rep_xml
+object media_mptw_f7_rep_xml {
+  a pcdm:File
+}
+object "media:mptw_f5/rep/jpg" as media_mptw_f5_rep_jpg
+object media_mptw_f5_rep_jpg {
+  a pcdm:File
+}
+object "media:mptw_f2/rep/jpg" as media_mptw_f2_rep_jpg
+object media_mptw_f2_rep_jpg {
+  a pcdm:File
+}
+object "proxy:mptw_p1" as proxy_mptw_p1
+object proxy_mptw_p1 {
+  a ore:Proxy
+}
+object "proxy:mptw_p2" as proxy_mptw_p2
+object proxy_mptw_p2 {
+  a ore:Proxy
+}
+object "media:mptw_f3/rep/tiff" as media_mptw_f3_rep_tiff
+object media_mptw_f3_rep_tiff {
+  a pcdm:File
+}
+object "work:mptw" as work_mptw
+object work_mptw {
+  a pcdm:Object
+  scholar:WorkCreator "Barack Obama"
+  scholar:WorkTitle "US Governement Pamphlet"
+}
+object "work:mptw_p1" as work_mptw_p1
+object work_mptw_p1 {
+  scholar:WorkCreator "Joe Biden"
+  a pcdm:Object
+  scholar:WorkTitle "Page 1"
+}
+object "work:mptw_p2" as work_mptw_p2
+object work_mptw_p2 {
+  a pcdm:Object
+  scholar:WorkTitle "Page 2"
+  scholar:WorkCreator "Barack Obama"
+}
+proxy_mptw_p2 --> proxy_mptw_p1 : iana:previous
+work_mptw_p1 --> media_mptw_f4_rep_xml : pcdm:hasFile
+work_mptw_p1 --> media_mptw_f3_rep_tiff : pcdm:hasFile
+work_mptw_p1 --> media_mptw_f2_rep_jpg : pcdm:hasFile
+proxy_mptw_p2 --> work_mptw_p2 : ore:proxyFor
+proxy_mptw_p1 --> work_mptw_p1 : ore:proxyFor
+work_mptw --> work_mptw_p2 : pcdm:hasMember
+work_mptw --> work_mptw_p1 : pcdm:hasMember
+work_mptw --> proxy_mptw_p1 : iana:first
+proxy_mptw_p2 --> work_mptw : ore:proxyIn
+work_mptw --> proxy_mptw_p2 : iana:last
+work_mptw_p2 --> media_mptw_f7_rep_xml : pcdm:hasFile
+work_mptw_p2 --> media_mptw_f6_rep_jp2 : pcdm:hasFile
+work_mptw_p2 --> media_mptw_f5_rep_jpg : pcdm:hasFile
+work_mptw --> media_mptw_f1_master_pdf : pcdm:hasFile
+proxy_mptw_p1 --> work_mptw : ore:proxyIn
+proxy_mptw_p1 --> proxy_mptw_p2 : iana:next
+@enduml
